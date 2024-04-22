@@ -1,4 +1,6 @@
+//De momento lo queremos todo en horizontal
 public class Barco {
+
     //Variables
     private int fila;
     private  int columna;
