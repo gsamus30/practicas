@@ -34,7 +34,8 @@ public class Main {
         }else {
 
         }*/
-    public static  void pintarBarcoVertical(char [] [] tablero, int fila, int columna, int longitud){
+
+   /* public static  void pintarBarcoVertical(char [] [] tablero, int fila, int columna, int longitud){
         //
      if (fila + longitud > tablero.length){
          System.out.println("Desbordo...");
@@ -53,14 +54,47 @@ public class Main {
             }else {
                  System.out.println("Error");
                     break;
-            }
-         }
-     }
+                }
+
+             }
+        }
     }
+*/
+
+    public static void pintarBarcoVertical(char[][] tablero, int fila, int columna, int longitud) {
+        if (fila + longitud > tablero.length ){
+            System.out.println("Desbordo...");
+        }else if ( fila > tablero.length) {
+            System.out.println("Coordenada invalida");
+        }else if (columna > tablero[0].length){
+            System.out.println("Coordenada invalida");
+        }else if (fila < 0){
+            System.out.println("odio las matrices :(");
+        }else if ( columna < 0){
+            System.out.println("Coordenada invalida ");
+
+
+        }else{
+
+        for (int i = 0; i < tablero.length; i++) {
+            for (int j = 0; j < tablero[0].length; j++) {
+                if (i >= fila && i < fila + longitud && j == columna) {
+                    if (tablero[i][j] == '.') {
+                        tablero[i][j] = 'B';
+                    } else {
+                        System.out.println("Error");
+                        return;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) {
 
         // 1)Darle valores [ | | | | | ]
-        int [] lista= {0,0,1,0,0,0};
+        int [] lista = {0,1,2,3,4,5};
 
         char [][] tablero = {{'.','.','.','.','.','.'}
                             ,{'.','.','.','.','.','.'}
@@ -101,6 +135,3 @@ public class Main {
 }
 
 
-//)Pintar barcos
-
-// 7)printar barcos y cordenadas
